@@ -1,0 +1,124 @@
+@use "abstracts" as *;
+
+//*?+*+*+*+====== !ANCHOR Form =====+*+*+*+*/
+.convert {
+  display: grid;
+  grid-template-columns: max-content 1fr max-content;
+  align-items: center;
+  gap: 3.2rem 0.4rem;
+
+  &__groub {
+    display: flex;
+    flex-direction: column;
+    grid-column: 1 / -1;
+  }
+
+  &__label {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 0.8rem;
+    transform-origin: left;
+
+    &:has(+ .convert__input:placeholder-shown) {
+      transition: all 0.3s ease-out 0.2s;
+      opacity: 0.7;
+      transform: translate(1rem, 3.3rem) scale(0.8);
+    }
+
+    &:has(+ .convert__input:focus) {
+      transition: all 0.4s ease-out 0.65s;
+      opacity: 1;
+      transform: translate(0, 0) scale(1);
+    }
+  }
+
+  &__input {
+    font-size: 2rem;
+    padding: 0.4rem 1.2rem;
+    box-shadow: none;
+
+    &::placeholder {
+      opacity: 0;
+    }
+  }
+
+  &__input-line {
+    height: 0.9rem;
+    stroke: $color-primary;
+    overflow: visible;
+    fill: none;
+    // transition: all 0.6s;
+
+    path {
+      transition: all 0.6s;
+    }
+
+    path.backward {
+      transition: all 0.4s cubic-bezier(0.13, 2.07, 0.2, 2.07);
+    }
+  }
+
+  &__select-box {
+    padding: 1.2rem 1.6rem;
+    border: 1px solid black;
+    border-radius: 0.5rem;
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: 1.8rem;
+      transform: translate(0, -50%);
+      border: 0.7rem solid transparent;
+      border-bottom: 0;
+      border-top: 0.7rem solid $color-primary;
+    }
+  }
+
+  &__country {
+    width: 2.5rem;
+    height: 2.5rem;
+    // width: 2.1rem;
+  }
+
+  &__selection {
+    background: none;
+    appearance: none;
+    border: none;
+    font-size: 1.8rem;
+    text-align: center;
+    padding-right: 1.8rem;
+    z-index: 1;
+    cursor: pointer;
+  }
+}
+
+//*?+*+*+*+====== !ANCHOR Button =====+*+*+*+*/
+.btn {
+  &--swap {
+    width: 2.6rem;
+    height: 2.6rem;
+
+    justify-self: center;
+  }
+
+  &--convert {
+    font-size: 2rem;
+    padding: 1.6rem;
+    color: #fff;
+    background-color: $color-primary;
+    border-radius: 3rem;
+    transition: $transition-standard;
+
+    grid-column: 1 / -1;
+
+    &:hover {
+      border-radius: 0.8rem;
+    }
+  }
+}

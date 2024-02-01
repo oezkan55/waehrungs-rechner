@@ -1,0 +1,39 @@
+//****************************/
+//* VARIABLES*/
+//****************************/
+
+//?=== COLORS ===
+$color-primary: #ff9642;
+$color-primary-light: #ffc190;
+
+// $color-secondary: #5dda57;
+$color-secondary: #88e883;
+
+$color-grey: #343a40;
+
+$color-outline-focus: rgba(255, 168, 101, 0.25);
+
+//?=== OTHERS ===
+$transition-standard: all 0.1s ease-in;
+$shadow-standard: 0 1 3rem rgba(0, 0, 0, 0.15);
+
+//****************************/
+//* MIX-INS*/
+//****************************/
+// @mixin name($a) {}
+@mixin heading {
+  color: tomato;
+}
+
+//?== Mix-In nutzen ==
+// @include name;
+
+//****************************/
+//* PLACEHODERS*/
+//****************************/
+// %name {
+
+// }
+
+//?== Placeholder nutzen ==
+// @extend %name;

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Währungsrechner</title>
+
+    <link rel="stylesheet" href="src/sass/main.scss" />
+    <script type="module" src="src/js/script.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <main class="app">
+        <header class="header">
+          <h1 class="header__heading">Währungsrechner</h1>
+        </header>
+
+        <form class="convert">
+          <div class="convert__groub">
+            <label for="amount" class="convert__label">Betrag</label>
+            <input
+              type="number"
+              class="convert__input"
+              id="amount"
+              placeholder="Betrag"
+              min="1"
+              step="0.01"
+              required
+            />
+            <svg class="convert__input-line" viewBox="0 0 300 2" fill="none">
+              <path
+                class="elastic-line backward"
+                d="M0 0.999512C0 0.999512 60.5 0.999512 150 0.999512C239.5 0.999512 300 0.999512 300 0.999512"
+              />
+            </svg>
+          </div>
+          <div class="convert__select-box convert__select-box--1">
+            <svg class="convert__country">
+              <use href="src/img/icons/sprite.svg#icon-eur" />
+            </svg>
+            <select class="convert__selection">
+              <option value="eur" selected>EURO</option>
+              <option value="usd">DOLLAR</option>
+              <option value="try">LIRA</option>
+              <option value="czk">KRONE</option>
+              <option value="gbp">PFUND</option>
+            </select>
+          </div>
+          <svg class="btn btn--swap" title="vertauschen">
+            <use href="src/img/icons/sprite.svg#icon-arrow-right-left" />
+          </svg>
+          <div class="convert__select-box convert__select-box--2">
+            <svg class="convert__country">
+              <use href="src/img/icons/sprite.svg#icon-usd" />
+            </svg>
+            <select class="convert__selection">
+              <option value="eur">EURO</option>
+              <option value="usd" selected>DOLLAR</option>
+              <option value="try">LIRA</option>
+              <option value="czk">KRONE</option>
+              <option value="gbp">PFUND</option>
+            </select>
+          </div>
+          <button class="btn btn--convert">Umrechnen</button>
+        </form>
+
+        <footer class="footer">
+          <p class="footer__message">
+            <!-- 20 EUR ===> 21.53 USD -->
+          </p>
+        </footer>
+      </main>
+    </div>
+
+    <!--?=== Damit "touch" Funktionalität auf Iphone/Mac funktioniert  ===-->
+    <script defer>
+      document.addEventListener("touchstart", function () {}, true);
+    </script>
+  </body>
+</html>
